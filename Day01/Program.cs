@@ -10,9 +10,9 @@ namespace Day01
         {
             var expenseReport = new ExpenseReport(LoadFromFile(args[0]));
 
-            var pair = expenseReport.FindPairThatSumsTo(2020);
+            var triplet = expenseReport.FindTripletThatSumsTo(2020);
 
-            Console.WriteLine($"Pair is {pair} and the result is {(pair[0] * pair[1])}");
+            Console.WriteLine($"Triplet result is {(triplet[0] * triplet[1] * triplet[2])}");
             
         }
 

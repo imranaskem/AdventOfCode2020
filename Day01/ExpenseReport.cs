@@ -27,20 +27,23 @@ namespace Day01
             }
         }
 
-        public int[] FindPairThatSumsTo(int sumTo)
+        public int[] FindTripletThatSumsTo(int sumTo)
         {
-            var pairs = new Dictionary<int, int>();
-
-            foreach (var exp in this.Expenses)
+            var results = new HashSet<int>();
+                        
+            for (int i = 0; i < this.Expenses.Count - 1; i++)
             {
-                var key = sumTo - exp;
-                if (pairs.ContainsKey(key))
+                var currentSum = sumTo - this.Expenses[i];
+
+                for (int j = i + 1; j < this.Expenses.Count; j++)
                 {
-                    return new int[] { key, exp };
-                }
-                else
-                {
-                    pairs.Add(exp, 0);
+                    var nextSum = currentSum - this.Expenses[j];
+
+                    if (results.Contains(nextSum))
+                    {
+                        return new int[] { this.Expenses[i], this.Expenses[j], nextSum };
+                    }
+                    results.Add(this.Expenses[j]);
                 }
             }
 
