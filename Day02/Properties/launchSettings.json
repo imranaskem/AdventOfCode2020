@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Day02": {
+      "commandName": "Project",
+      "commandLineArgs": "C:\\Users\\imran\\source\\repos\\AdventOfCode2020\\Day02\\passwords.txt"
+    }
+  }
+}
